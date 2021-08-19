@@ -1,8 +1,13 @@
 name: lucifer
 
 on:
-  repository_dispatch:
-    types: [build]
+  push:
+    branches:
+      - master
+      - 'feature/*' # matches feature/featA, feature/featB, doesn't match feature/feat/a
+      - 'feature/**'
+  #repository_dispatch:
+  #  types: [build]
   #schedule:
   #  - cron: "0/5 * * * *"
   #  - cron: "0/6 * * * *"
